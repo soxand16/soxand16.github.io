@@ -1,4 +1,5 @@
-# Introduction to Unittesting in Python</title>		
+# Introduction to Unittesting in Python	
+</html>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
