@@ -1,5 +1,5 @@
 # Introduction to Unittesting in Python	
-</html>
+<html>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
