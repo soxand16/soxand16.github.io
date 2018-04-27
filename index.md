@@ -160,5 +160,42 @@ if __name__ == '__main__' :
     unittest.main()
 ```
 
+Most of these test should be pretty easy to read given what we've learned so far, but the negative number has something a little different. Our assert function is nested inside of a for loop, which is okay, even beneficial. This notation allows us to test the function for the numbers from -1 to -10 with only two lines of code!
+
+## Our Results 2.0
+
+Let's take a look at the results we get with our new tests!
+
+```
+..FF
+======================================================================
+FAIL: test_is_zero_not_prime (__main__.TestPrime)
+Is zero correctly determined not to be prime?
+----------------------------------------------------------------------
+Traceback (most recent call last):
+File "/Users/Sam/sp18/me615/unittest_demo.py", line 34, in test_is_zero_not_prime
+self.assertFalse(is_prime(0))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_negative_number (__main__.TestPrime)
+Is a negative number correctly determined not to be prime?
+----------------------------------------------------------------------
+Traceback (most recent call last):
+File "/Users/Sam/sp18/me615/unittest_demo.py", line 40, in test_negative_number
+self.assertFalse(is_prime(index))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.005s
+
+FAILED (failures=2)
+```
+
+Yikes!  Looks like we've got a couple of failures. Before we look at these, a couple of details about the output.
+    * At the top, theres a `..FF`. This is a breif summary of the test results. A "." indicates a passed test, a "F" a failure, and an "E" an error or exception (like we saw when we ran our first test case for the first time).
+    * The body of the output stays basically the same with the test name, test docstring, and the test class its from in a header.
+    * At the bottom, we see the number of tests, the test time, and the number of failures (and errors, had there been any.)
+    
 
 
