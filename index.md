@@ -56,15 +56,15 @@ if __name__ == '__main__' :
 ```
 
 There are a couple of important things to note about our test class
-    1. `import unittest`
-        * This line allows us access to the unittest module. Without it, the code would not run.
-    2. `class TestPrime(unittest.TestCase) :`
-        * This line declares our test case class. It inherits several class methods from the `unittest.TestCase` class that enable it to work with the rest of the `unittest` framework.
-    3. `def test_is_prime_5(self) :`
-        * This line declares a test function. In order for a function to be catagorized as a test by `unittest`, it must begin with `test_`. `unittest` then collects all of these tests and runs them. (Note: The `self` argument has more to do with class structure in python than unittesting, so for our purposes, it's enough to know that it's necessary for the function to work.)
-    4. `self.assertTrue(is_prime(5))`
-        * This line checks (or asserts) that `is_prime(5)` is `True`. `unittest` has several different "assert" methods, including `self.assertEqual` and `self.assertNotEqual`. A complete list can be found in `unittest`'s documentation [here](https://docs.python.org/3/library/unittest.html "unittest documentation").
-        
+1. `import unittest`
+    * This line allows us access to the unittest module. Without it, the code would not run.
+2. `class TestPrime(unittest.TestCase) :`
+    * This line declares our test case class. It inherits several class methods from the `unittest.TestCase` class that enable it to work with the rest of the `unittest` framework.
+3. `def test_is_prime_5(self) :`
+    * This line declares a test function. In order for a function to be catagorized as a test by `unittest`, it must begin with `test_`. `unittest` then collects all of these tests and runs them. (Note: The `self` argument has more to do with class structure in python than unittesting, so for our purposes, it's enough to know that it's necessary for the function to work.)
+4. `self.assertTrue(is_prime(5))`
+    * This line checks (or asserts) that `is_prime(5)` is `True`. `unittest` has several different "assert" methods, including `self.assertEqual` and `self.assertNotEqual`. A complete list can be found in `unittest`'s documentation [here](https://docs.python.org/3/library/unittest.html "unittest documentation").
+    
 ## Running Our Test
 
 Running our test yeilds the following output :
@@ -122,10 +122,10 @@ Great! We've passed our first test! So what happens now? Do we delete it and wri
 ## Our Test 2.0
 
 So far we've tested that our function is correct for one prime number, which doesn't come close to covering the range of arguments that could be passed to our function. While its unrealistic to test for every case, with some inteligent design, we can make sure that our code works for a good variety of cases. So let's list the different groups of numbers that could be tested:
-    1. Normal Primes (we've already got a test for this!)
-    2. Normal Non-Prime Numbers
-    3. Zero 
-    4. Negatives 
+1. Normal Primes (we've already got a test for this!)
+2. Normal Non-Prime Numbers
+3. Zero 
+4. Negatives 
     
 This is by no means an exhaustive list of the things we could test for, but they're a start. So let's update our test class
 
@@ -193,9 +193,9 @@ FAILED (failures=2)
 ```
 
 Yikes!  Looks like we've got a couple of failures. Before we look at these, a couple of details about the output.
-    * At the top, theres a `..FF`. This is a breif summary of the test results. A "." indicates a passed test, a "F" a failure, and an "E" an error or exception (like we saw when we ran our first test case for the first time).
-    * The body of the output stays basically the same with the test name, test docstring, and the test class its from in a header.
-    * At the bottom, we see the number of tests, the test time, and the number of failures (and errors, had there been any.)
+* At the top, theres a `..FF`. This is a breif summary of the test results. A "." indicates a passed test, a "F" a failure, and an "E" an error or exception (like we saw when we ran our first test case for the first time).
+* The body of the output stays basically the same with the test name, test docstring, and the test class its from in a header.
+* At the bottom, we see the number of tests, the test time, and the number of failures (and errors, had there been any).
     
 
 
