@@ -105,7 +105,7 @@ def is_prime(n) :
     return True
 ```
 
-## Second Times the Charm
+# Second Times the Charm
 
 After our changes, running our tests yeids the following output: 
 
@@ -154,7 +154,7 @@ class TestPrime(unittest.TestCase) :
         """Is a negative number correctly determined not to be prime?"""
 
         for index in range(-1, -10, -1):
-            self.assertFalse(is_prime(index))
+            self.assertFalse(is_prime(index), msg = '{} is not prime!'.format(index))
 
 if __name__ == '__main__' :
     unittest.main()
@@ -196,6 +196,38 @@ Yikes!  Looks like we've got a couple of failures. Before we look at these, a co
 * At the top, theres a `..FF`. This is a breif summary of the test results. A "." indicates a passed test, a "F" a failure, and an "E" an error or exception (like we saw when we ran our first test case for the first time).
 * The body of the output stays basically the same with the test name, test docstring, and the test class its from in a header.
 * At the bottom, we see the number of tests, the test time, and the number of failures (and errors, had there been any).
+
+Looking more at our actual results, we can see that our function does not produce the desired result for zero and negative numbers, so we need to address that in our code. Fortunately, it's fairly easy to address both of these with one if statement (two birds, one stone).
+
+```python
+def is_prime(n) :
+    """ Return True if n is prime, else returns False"""
+    
+    # Any number less than one is NOT prime
+    if n <= 1 :
+        return False
+
+    for element in list(range(2, n)) :
+        if not n % element :
+            return False
+    return True
+```
+
+And running our tests we see...
+
+```
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+OK
+```
+
+We're good!
+
+# Final Words on Unit Testing
+
+Using unit testing on your code is a very useful and practical way to manage your code and ensure it continues to function properly as your library grows. Running unit tests after each development can ensure that small tweaks did not have unintended side effects. However, just because your code passes all of the tests, does not mean it's perfect. The code is only as good as the tests, so it falls on the coder to be thoughtful and think outside the box when testing their code.  
     
 
 
