@@ -2,7 +2,7 @@
 
 ## What is Unit Testing?
 
-**Testing**, in general coding terms, is the practice of writing code (in addition to your main code) that runs and checks the output of your main code. A **unit** refers to a peice of code (i.e a module, class, or function) that is isolated from other code. So putthing this together, **Unit Testing** is the practice of writting code to test isolated pieces of code.
+**Testing**, in general coding terms, is the practice of writing code (in addition to your main code) that runs and checks the output of your main code. A **unit** refers to a peice of code (i.e a module, class, or function) that is isolated from other code. So puting this together, **Unit Testing** is the practice of writting code to test isolated pieces of code.
 
 ## Why Unit Testing?
 
@@ -173,7 +173,7 @@ FAIL: test_is_zero_not_prime (__main__.TestPrime)
 Is zero correctly determined not to be prime?
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-File "/Users/Sam/sp18/me615/unittest_demo.py", line 34, in test_is_zero_not_prime
+File "/Users/Sam/sp18/me615/unittest_demo.py", line 38, in test_is_zero_not_prime
 self.assertFalse(is_prime(0))
 AssertionError: True is not false
 
@@ -182,9 +182,9 @@ FAIL: test_negative_number (__main__.TestPrime)
 Is a negative number correctly determined not to be prime?
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-File "/Users/Sam/sp18/me615/unittest_demo.py", line 40, in test_negative_number
-self.assertFalse(is_prime(index))
-AssertionError: True is not false
+File "/Users/Sam/sp18/me615/unittest_demo.py", line 44, in test_negative_number
+self.assertFalse(is_prime(index), msg = '{} is not prime!'.format(index))
+AssertionError: True is not false : -1 is not prime!
 
 ----------------------------------------------------------------------
 Ran 4 tests in 0.005s
